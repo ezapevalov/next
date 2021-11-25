@@ -35,7 +35,7 @@ function EventFilter() {
             <label htmlFor="filterEventMonth" className="col-sm-3 control-label">Month</label>
             <div className="col-sm-3">
               <select ref={monthInputRef} className="form-control" id="filterEventMonth">
-                {monthNames.map((monthName, index) => <option value={index+1}>{monthName}</option>)}
+                {monthNames.map((monthName, index) => <option key={index} value={index+1}>{monthName}</option>)}
               </select>
             </div>
           </div>

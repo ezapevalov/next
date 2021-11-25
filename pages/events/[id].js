@@ -1,13 +1,12 @@
-import { useRouter } from 'next/router'
-import { getEventById } from '../../dummy-data'
+import { getEventById } from '../../data/events_api'
 import Template from '../../components/templates/template'
 import DefaultErrorPage from 'next/error'
 import Link from 'next/link'
+import Image from 'next/image'
+import {getAllEvents} from "../../data/events_api";
 
-function EventDetailPage() {
-  const router = useRouter();
-  const eventId = router.query.id;
-  const eventData = getEventById(eventId);
+function EventDetailPage(props) {
+  const eventData = props.eventData;
   
   if(!eventData) {
     return <DefaultErrorPage statusCode={404} />
@@ -28,7 +27,7 @@ function EventDetailPage() {
           </div>
           <div className="row">
             <div className="entry">
-            <img className="img-responsive" src={'/' + eventData.image} alt={eventData.image} />
+            <Image className="img-responsive" src={'/' + eventData.image} alt={eventData.image} width={500} height={200} />
             <span className="sub-text">Date: {prettyDate}. Location: {eventData.location}</span>
             <p>{eventData.description}</p>
             </div>
@@ -43,6 +42,17 @@ function EventDetailPage() {
       </div>
     </Template>
   );
+}
+
+export async function getServerSideProps(context) {
+  const eventID = context.params.id;
+  const eventData = await getEventById(eventID);
+  
+  return {
+    props: {
+      eventData: eventData
+    }
+  };
 }
 
 export default EventDetailPage;

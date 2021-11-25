@@ -3,6 +3,8 @@ import EventItem from './event-item'
 function EventList(props) {
   const { items, headerTitle } = props;
   
+  if(!items) return;
+  
   return (
     <div className="event" id="event">
       <div className="container">

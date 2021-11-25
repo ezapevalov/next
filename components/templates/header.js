@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 function Header() {
   return (
@@ -13,7 +14,7 @@ function Header() {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="/"><img className="img-responsive" src="/images/logo.png" alt="Logo"/></a>
+            <Link className="navbar-brand" href="/"><Image height={60} width={170} className="img-responsive" src="/images/logo.png" alt="Logo"/></Link>
           </div>
         
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

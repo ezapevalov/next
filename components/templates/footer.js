@@ -1,16 +1,18 @@
+import Link from 'next/link'
+
 function Footer() {
   return (
     <footer>
       <div className="container">
         <p>
-          <a href="/">Home</a> |
-          <a href="/">works</a> |
-          <a href="/">Team</a> |
-          <a href="/">Contact</a></p>
+          <Link href="/">Home</Link> |
+          <Link href="/">works</Link> |
+          <Link href="/">Team</Link> |
+          <Link href="/">Contact</Link></p>
         <p className="copy-right">
           Copyright &copy; {new Date().getFullYear()}
-          <a href="/">Your Site</a> |
-          Designed By : <a href="http://www.indioweb.in/portfolio">IndioWeb</a>, All rights reserved.
+          <Link href="/">Your Site</Link> |
+          Designed By : <Link href="http://www.indioweb.in/portfolio">IndioWeb</Link>, All rights reserved.
         </p>
       </div>
     </footer>
