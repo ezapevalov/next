@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { getEventById } from '../../data/events_api'
 import Template from '../../components/templates/template'
 import DefaultErrorPage from 'next/error'
@@ -20,6 +21,11 @@ function EventDetailPage(props) {
   
   return (
     <Template>
+      <Head>
+        <title>{eventData.title}</title>
+        <meta name="description" content={eventData.description} />
+      </Head>
+      
       <div className="blog text-center" id="blog">
         <div className="container">
           <div className="default-heading">
@@ -27,9 +33,9 @@ function EventDetailPage(props) {
           </div>
           <div className="row">
             <div className="entry">
-            <Image className="img-responsive" src={'/' + eventData.image} alt={eventData.image} width={500} height={200} />
-            <span className="sub-text">Date: {prettyDate}. Location: {eventData.location}</span>
-            <p>{eventData.description}</p>
+              <Image className="img-responsive" src={'/' + eventData.image} alt={eventData.image} width={500} height={200} />
+              <div className="sub-text">Date: {prettyDate}. Location: {eventData.location}</div>
+              <p>{eventData.description}</p>
             </div>
           </div>
           <div className="text-center">
