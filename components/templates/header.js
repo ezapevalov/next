@@ -1,31 +1,18 @@
 import Link from 'next/link'
-import Image from 'next/image'
 
 function Header() {
   return (
-    <header>
-      <nav className="navbar navbar-default" role="navigation">
-        <div className="container">
-          <div className="navbar-header">
-            <button type="button" className="navbar-toggle" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-              <span className="sr-only">Toggle navigation</span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-            </button>
-            <Link className="navbar-brand" href="/"><Image height={60} width={170} className="img-responsive" src="/images/logo.png" alt="Logo"/></Link>
-          </div>
-        
-          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul className="nav navbar-nav navbar-right">
-              <li><Link href="/">Featured Events</Link></li>
-              <li><Link href="/events">All events</Link></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <div className="blog-masthead" id="blog-masthead">
+      <div className="container">
+        <nav className="blog-nav">
+          <Link href="/"><a className="blog-nav-item active">Home</a></Link>
+          <Link href="/features"><a className="blog-nav-item">New features</a></Link>
+          <Link href="/press"><a className="blog-nav-item">Press</a></Link>
+          <Link href="/hires"><a className="blog-nav-item">New hires</a></Link>
+          <Link href="/about"><a className="blog-nav-item">About</a></Link>
+        </nav>
+      </div>
+    </div>
   );
 }
 
