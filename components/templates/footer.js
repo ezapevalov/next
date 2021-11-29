@@ -2,19 +2,9 @@ import Link from 'next/link'
 
 function Footer() {
   return (
-    <footer>
-      <div className="container">
-        <p>
-          <Link href="/">Home</Link> |
-          <Link href="/">works</Link> |
-          <Link href="/">Team</Link> |
-          <Link href="/">Contact</Link></p>
-        <p className="copy-right">
-          Copyright &copy; {new Date().getFullYear()}
-          <Link href="/">Your Site</Link> |
-          Designed By : <Link href="http://www.indioweb.in/portfolio">IndioWeb</Link>, All rights reserved.
-        </p>
-      </div>
+    <footer className="blog-footer">
+      <p> Blog built with <Link href="https://nextjs.org/">Next.js</Link> by <Link href="https://github.com/ezapevalov">Eugene Zapevalov</Link></p>
+      <p><Link href="#blog-masthead">Back to top</Link></p>
     </footer>
   );
 }
